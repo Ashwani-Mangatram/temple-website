@@ -3,57 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Temple Construction Donation</title>
+
+<title>Temple Donation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fffaf2;
+    font-family: 'Poppins', sans-serif;
+    background: #fdf7f0;
     color: #333;
 }
 
 header {
-    background: #8b0000;
+    background: linear-gradient(135deg, #8b0000, #c62828);
     color: white;
     text-align: center;
-    padding: 25px;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
 }
 
 section {
+    max-width: 900px;
+    margin: 40px auto;
     padding: 20px;
-    max-width: 800px;
-    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
 }
 
 h2 {
     color: #8b0000;
+    margin-top: 0;
 }
 
 .donation-box {
-    background: #ffe8cc;
-    padding: 20px;
-    border-radius: 10px;
     text-align: center;
-    margin-top: 20px;
+    background: #fff3e0;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.donation-box img {
+    margin: 15px 0;
 }
 
 button {
     background: #8b0000;
     color: white;
     border: none;
-    padding: 12px 20px;
+    padding: 14px 26px;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #c62828;
 }
 
 footer {
-    text-align: center;
     background: #8b0000;
     color: white;
-    padding: 10px;
-    margin-top: 30px;
+    text-align: center;
+    padding: 15px;
 }
 </style>
 </head>
@@ -62,19 +86,25 @@ footer {
 
 <header>
 <h1>🙏 Temple Construction Donation 🙏</h1>
-<p>Help us build a sacred place for the community</p>
+<p>Help us build a sacred place for future generations</p>
 </header>
 
 <section>
+
+<div class="card">
 <h2>Our Mission</h2>
 <p>
-We are building a temple to preserve culture, faith, and community unity.
-Your generous donation will help complete construction and serve future generations.
+We are building a temple to preserve culture, faith, and unity.
+Your donation helps complete construction and serve the community.
 </p>
+</div>
 
-<div class="donation-box">
+<div class="card donation-box">
 <h2>Support the Temple</h2>
+
 <p>Every contribution matters 🙏</p>
+
+<img src="qr.png" width="220" alt="Donation QR">
 
 <p><strong>UPI:</strong> temple@upi</p>
 <p><strong>Bank:</strong> Temple Trust Account</p>
@@ -85,11 +115,13 @@ Donate Now
 </button>
 </div>
 
+<div class="card">
 <h2>Contact</h2>
 <p>
 Phone: +91 XXXXX XXXXX<br>
 Email: templetrust@email.com
 </p>
+</div>
 
 </section>
 
