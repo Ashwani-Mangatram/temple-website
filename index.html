@@ -9,6 +9,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+    .sidebar {
+    position: fixed;
+    top: 120px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 999;
+}
+
+.sidebar a {
+    background: #8b0000;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.sidebar a:hover {
+    background: #c62828;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -93,6 +117,12 @@ footer {
 </head>
 
 <body>
+    <div class="sidebar">
+<a href="animal.html" target="_blank">Animal Welfare</a>
+<a href="orphan.html" target="_blank">Orphan Welfare</a>
+<a href="nature.html" target="_blank">Nature Welfare</a>
+</div>
+
 
 <header>
 <h1>🙏 Temple Construction Donation 🙏</h1>
@@ -100,22 +130,7 @@ footer {
 </header>
 
 <section>
-    <div style="text-align:center; margin-bottom:30px;">
-
-<a href="animal.html" target="_blank">
-<button>Animal Welfare</button>
-</a>
-
-<a href="orphan.html" target="_blank">
-<button>Orphan Welfare</button>
-</a>
-
-<a href="nature.html" target="_blank">
-<button>Nature Welfare</button>
-</a>
-
-</div>
-
+   
 
 <div class="card">
 <h2>Our Mission</h2>
