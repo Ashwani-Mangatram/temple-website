@@ -9,12 +9,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-{
+body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url('https://upload.wikimedia.org/wikipedia/commons/d/d1/Kedarnath_Temple_in_Rainy_season.jpg') no-repeat center center fixed;
+    background: url('temple.png') no-repeat center center fixed;
     background-size: cover;
     color: #333;
+}
+
+/* soft overlay for readability */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.75);
+    z-index: -1;
 }
 
 header {
@@ -39,7 +48,7 @@ section {
     background: white;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     margin-bottom: 30px;
 }
 
@@ -91,7 +100,6 @@ footer {
 </header>
 
 <section>
-    
 
 <div class="card">
 <h2>Our Mission</h2>
