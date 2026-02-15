@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Orphan Welfare</title>
+<title>Orphan</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,7 +35,6 @@ body::before {
     max-width: 420px;
     text-align: center;
     color: white;
-    margin-top: -200px; /* move upward */
     box-shadow: 0 8px 32px rgba(0,0,0,0.35);
     border: 1px solid rgba(255,255,255,0.3);
 }
@@ -49,7 +48,7 @@ p {
     font-size: 16px;
     font-weight: 500;
 }
-    
+
 a {
     display: inline-block;
     margin-top: 20px;
@@ -61,57 +60,44 @@ a {
 a:hover {
     text-decoration: underline;
 }
-    /* ---------- MOBILE FIX ---------- */
+
+/* ---------- PREMIUM MOBILE FIX ---------- */
 @media (max-width: 768px) {
 
 body {
-    overflow: auto;
+    padding: 20px;
+    align-items: flex-start;
 }
 
-/* quote smaller */
-.quote {
-    font-size: 16px;
-    bottom: 70px;
-    padding: 0 15px;
+.glass {
+    width: 95%;
+    max-width: none;
+    margin-top: 40px;
+    padding: 20px;
 }
 
-/* Om watermark smaller */
-.om {
-    font-size: 90px;
+h1 {
+    font-size: 26px;
 }
 
-/* buttons smaller */
-#soundBtn,
-#bellBtn {
+p {
+    font-size: 15px;
+}
+
+a {
     font-size: 14px;
-    padding: 10px 14px;
-}
-
-/* corner text */
-.corner-text {
-    font-size: 11px;
-    right: 10px;
-}
-
-/* sloka right text */
-.sloka {
-    font-size: 14px;
-    right: 10px;
-    top: 20%;
-    max-width: 160px;
 }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div class="glass">
 <h1>Orphan Welfare ❤️</h1>
-<p>Your donation supports orphan children.</p>
+<p>Your donation supports orphan children and their future</p>
 
 <a href="index.html">⬅ Back to Home</a>
 </div>
