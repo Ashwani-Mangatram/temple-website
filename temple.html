@@ -80,6 +80,19 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
+    #bellBtn {
+    position: fixed;
+    bottom: 70px;
+    left: 20px;
+    padding: 12px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: orange;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
 </style>
 </head>
 
@@ -107,20 +120,35 @@ Sanatan Dharma • Eternal Truth
 </audio>
 
 <script>
-const btn = document.getElementById("soundBtn");
+const mantraBtn = document.getElementById("soundBtn");
 const mantra = document.getElementById("mantraSound");
 
-btn.addEventListener("click", () => {
+const bellBtn = document.getElementById("bellBtn");
+const bell = document.getElementById("bellSound");
+
+mantraBtn.onclick = () => {
     if (mantra.paused) {
         mantra.play();
-        btn.innerText = "🔇 Stop Mantra";
+        mantraBtn.innerText = "🔇 Stop Mantra";
     } else {
         mantra.pause();
         mantra.currentTime = 0;
-        btn.innerText = "🕉 Play Gayatri Mantra";
+        mantraBtn.innerText = "🕉 Play Gayatri Mantra";
     }
-});
+};
+
+bellBtn.onclick = () => {
+    if (bell.paused) {
+        bell.play();
+        bellBtn.innerText = "🔕 Stop Bell";
+    } else {
+        bell.pause();
+        bell.currentTime = 0;
+        bellBtn.innerText = "🔔 Play Bell";
+    }
+};
 </script>
+
 
 </body>
 </html>
