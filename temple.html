@@ -67,7 +67,7 @@ body {
     opacity: 0.85;
 }
 
-/* bell button */
+/* mantra button */
 #soundBtn {
     position: fixed;
     bottom: 20px;
@@ -100,28 +100,27 @@ body {
 Sanatan Dharma • Eternal Truth
 </div>
 
-<button id="soundBtn">🔔 Play Mantra</button>
+<button id="soundBtn">🕉 Play Gayatri Mantra</button>
 
-<audio id="bellSound" loop>
-  <source src="bell.mp3" type="audio/mpeg">
+<audio id="mantraSound" loop>
+  <source src="gayatri.mp3" type="audio/mpeg">
 </audio>
 
 <script>
 const btn = document.getElementById("soundBtn");
-const bell = document.getElementById("bellSound");
+const mantra = document.getElementById("mantraSound");
 
 btn.addEventListener("click", () => {
-    if (bell.paused) {
-        bell.play();
-        btn.innerText = "🔕 Stop Mantra";
+    if (mantra.paused) {
+        mantra.play();
+        btn.innerText = "🔇 Stop Mantra";
     } else {
-        bell.pause();
-        bell.currentTime = 0;
-        btn.innerText = "🔔 Play Mantra";
+        mantra.pause();
+        mantra.currentTime = 0;
+        btn.innerText = "🕉 Play Gayatri Mantra";
     }
 });
 </script>
-
 
 </body>
 </html>
