@@ -1,45 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Nature Welfare</title>
+<title>PAGE TITLE</title>
 
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 40px 20px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: url('nature.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
-/* soft overlay for readability */
+/* soft overlay */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(255,255,255,0.35);
+    background: rgba(0,0,0,0.25);
     z-index: -1;
 }
 
+/* GLASS CARD */
+.glass {
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.18);
+    border-radius: 18px;
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
 h1 {
-    font-size: 40px;
-    font-weight: 900;
-    color: #000;
-    text-shadow: 0 2px 10px rgba(255,255,255,0.9);
+    font-size: 42px;
+    margin-bottom: 10px;
 }
 
 p {
     font-size: 20px;
-    font-weight: bold;
-    color: #111;
-    text-shadow: 0 2px 8px rgba(255,255,255,0.9);
+    font-weight: 500;
 }
 
 a {
-    font-size: 18px;
+    display: inline-block;
+    margin-top: 20px;
     font-weight: bold;
-    color: blue;
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 </style>
 
@@ -47,11 +65,12 @@ a {
 
 <body>
 
+<div class="glass">
 <h1>Nature Welfare 🌱</h1>
 <p>Your donation supports environment and nature care.</p>
 
-<br><br>
 <a href="index.html">⬅ Back to Home</a>
+</div>
 
 </body>
 </html>
