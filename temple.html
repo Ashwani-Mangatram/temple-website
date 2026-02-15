@@ -121,7 +121,7 @@ Sanatan Dharma • Eternal Truth
 </audio>
 
 <!-- Temple bell -->
-<button id="bellBtn">🔔 Play Bell</button>
+<button id="bellBtn">🔔 Play OM</button>
 <audio id="bellSound" loop>
   <source src="bell.mp3" type="audio/mpeg">
 </audio>
@@ -147,11 +147,11 @@ mantraBtn.onclick = () => {
 bellBtn.onclick = () => {
     if (bell.paused) {
         bell.play();
-        bellBtn.innerText = "🔕 Stop Bell";
+        bellBtn.innerText = "🔕 Stop OM";
     } else {
         bell.pause();
         bell.currentTime = 0;
-        bellBtn.innerText = "🔔 Play Bell";
+        bellBtn.innerText = "🔔 Play OM";
     }
 };
 </script>
