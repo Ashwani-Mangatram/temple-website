@@ -129,7 +129,16 @@ const mantraBtn = document.getElementById("mantraBtn");
 const bell = document.getElementById("bell");
 const mantra = document.getElementById("mantra");
 
-bellBtn.onclick = () => bell.play();
+bellBtn.onclick = () => {
+    if (bell.paused) {
+        bell.play();
+        bellBtn.innerText = "🔕 Stop Bell";
+    } else {
+        bell.pause();
+        bell.currentTime = 0;
+        bellBtn.innerText = "🔔 Play Bell";
+    }
+};
 
 mantraBtn.onclick = () => {
     if (mantra.paused) {
