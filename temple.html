@@ -7,13 +7,13 @@
 <style>
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     font-family: Arial, sans-serif;
     color: white;
 }
 
-/* background layer */
+/* background */
 .bg {
     position: fixed;
     inset: 0;
@@ -23,7 +23,7 @@ body {
     z-index: -2;
 }
 
-/* dark overlay */
+/* overlay */
 .overlay {
     position: fixed;
     inset: 0;
@@ -31,7 +31,7 @@ body {
     z-index: -1;
 }
 
-/* slow cinematic zoom */
+/* zoom animation */
 @keyframes slowZoom {
     from { transform: scale(1); }
     to { transform: scale(1.08); }
@@ -47,10 +47,10 @@ body {
     opacity: 0.08;
 }
 
-/* Sanskrit quote */
+/* quote */
 .quote {
     position: fixed;
-    bottom: 90px;
+    bottom: 110px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 22px;
@@ -63,9 +63,8 @@ body {
 .corner-text {
     position: fixed;
     bottom: 20px;
-    right: 30px;
+    right: 20px;
     font-size: 14px;
-    opacity: 0.85;
 }
 
 /* mantra button */
@@ -79,13 +78,12 @@ body {
     border-radius: 8px;
     background: gold;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 /* bell button */
 #bellBtn {
     position: fixed;
-    bottom: 70px;
+    bottom: 80px;
     left: 20px;
     padding: 12px 18px;
     font-size: 16px;
@@ -93,61 +91,41 @@ body {
     border-radius: 8px;
     background: orange;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-    /* right side sloka */
-.right-sloka {
-    position: fixed;
-    right: 40px;
-    top: 40%;
-    width: 320px;
-    font-size: 20px;
-    line-height: 1.5;
-    text-align: right;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 0 3px 10px rgba(0,0,0,0.8);
-    opacity: 0.95;
 }
 
-    /* ---------- MOBILE FIX ---------- */
+/* ---------- PREMIUM MOBILE FIX ---------- */
 @media (max-width: 768px) {
 
 body {
     overflow: auto;
+    padding: 20px;
 }
 
-/* quote smaller */
+/* center text */
 .quote {
+    width: 90%;
     font-size: 16px;
-    bottom: 70px;
-    padding: 0 15px;
+    bottom: 120px;
 }
 
-/* Om watermark smaller */
+/* smaller Om */
 .om {
-    font-size: 90px;
+    font-size: 80px;
 }
 
-/* buttons smaller */
+/* stack buttons */
 #soundBtn,
 #bellBtn {
-    font-size: 14px;
-    padding: 10px 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
 }
 
-/* corner text */
+#bellBtn { bottom: 90px; }
+#soundBtn { bottom: 20px; }
+
 .corner-text {
     font-size: 11px;
-    right: 10px;
-}
-
-/* sloka right text */
-.sloka {
-    font-size: 14px;
-    right: 10px;
-    top: 20%;
-    max-width: 160px;
 }
 
 }
@@ -172,14 +150,12 @@ body {
 Sanatan Dharma • Eternal Truth
 </div>
 
-<!-- Gayatri mantra -->
-<button id="soundBtn">Gayatri Mantra</button>
+<button id="soundBtn">🕉 Play Gayatri Mantra</button>
 <audio id="mantraSound" loop>
   <source src="gayatri.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Temple bell -->
-<button id="bellBtn">🔔 Play OM</button>
+<button id="bellBtn">🔔 Play Bell</button>
 <audio id="bellSound" loop>
   <source src="bell.mp3" type="audio/mpeg">
 </audio>
@@ -198,31 +174,21 @@ mantraBtn.onclick = () => {
     } else {
         mantra.pause();
         mantra.currentTime = 0;
-        mantraBtn.innerText = "Gayatri Mantra";
+        mantraBtn.innerText = "🕉 Play Gayatri Mantra";
     }
 };
 
 bellBtn.onclick = () => {
     if (bell.paused) {
         bell.play();
-        bellBtn.innerText = "🔕 Stop OM";
+        bellBtn.innerText = "🔕 Stop Bell";
     } else {
         bell.pause();
         bell.currentTime = 0;
-        bellBtn.innerText = "🔔 Play OM";
+        bellBtn.innerText = "🔔 Play Bell";
     }
 };
 </script>
-<div class="right-sloka">
-यदा यदा हि धर्मस्य  
-ग्लानिर्भवति भारत ।  
-अभ्युत्थानम् अधर्मस्य  
-तदात्मानं सृजाम्यहम् ॥
-
-<br><br>
-(Whenever dharma declines and adharma rises,  
-I manifest myself.)
-</div>
 
 </body>
 </html>
