@@ -9,10 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-   .sidebar {
+
+/* sidebar desktop */
+.sidebar {
     position: fixed;
     top: 50%;
-    left: 0px;
+    left: 0;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
@@ -25,7 +27,6 @@
     z-index: 999;
 }
 
-
 .sidebar a {
     background: linear-gradient(135deg, #8b0000, #c62828);
     color: white;
@@ -33,15 +34,9 @@
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
-    transition: 0.25s;
 }
 
-.sidebar a:hover {
-    transform: translateX(5px);
-    background: linear-gradient(135deg, #c62828, #8b0000);
-}
-
-    
+/* background */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -50,7 +45,6 @@ body {
     color: #333;
 }
 
-/* soft overlay for readability */
 body::before {
     content: "";
     position: fixed;
@@ -99,6 +93,8 @@ h2 {
 
 .donation-box img {
     margin: 15px 0;
+    width: 220px;
+    max-width: 90%;
 }
 
 button {
@@ -109,11 +105,6 @@ button {
     font-size: 16px;
     border-radius: 6px;
     cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #c62828;
 }
 
 footer {
@@ -122,44 +113,56 @@ footer {
     text-align: center;
     padding: 15px;
 }
-   /* ---------- MOBILE FIX ---------- */
+
+/* ---------- MOBILE PREMIUM FIX ---------- */
 @media (max-width: 768px) {
 
 body {
-    overflow: auto;
+    overflow-x: hidden;
 }
 
-/* quote smaller */
-.quote {
-    font-size: 16px;
-    bottom: 70px;
-    padding: 0 15px;
+/* header smaller */
+header h1 { font-size: 22px; }
+header p { font-size: 14px; }
+
+/* section spacing */
+section {
+    margin: 10px;
+    padding: 10px;
 }
 
-/* Om watermark smaller */
-.om {
-    font-size: 90px;
+/* cards full width */
+.card {
+    padding: 18px;
 }
 
-/* buttons smaller */
-#soundBtn,
-#bellBtn {
-    font-size: 14px;
-    padding: 10px 14px;
+/* buttons touch-friendly */
+button {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
 }
 
-/* corner text */
-.corner-text {
-    font-size: 11px;
-    right: 10px;
+/* sidebar becomes bottom nav */
+.sidebar {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 0;
+    padding: 10px 5px;
 }
 
-/* sloka right text */
-.sloka {
-    font-size: 14px;
-    right: 10px;
-    top: 20%;
-    max-width: 160px;
+.sidebar a {
+    font-size: 12px;
+    padding: 8px 6px;
+}
+
+footer {
+    margin-bottom: 60px; /* space for bottom nav */
 }
 
 }
@@ -168,13 +171,13 @@ body {
 </head>
 
 <body>
-    <div class="sidebar">
-<a href="temple.html" target="_blank">Temple</a>
-<a href="animal.html" target="_blank">Animal Welfare</a>
-<a href="orphan.html" target="_blank">Orphan Welfare</a>
-<a href="nature.html" target="_blank">Nature Welfare</a>
-</div>
 
+<div class="sidebar">
+<a href="temple.html">Temple</a>
+<a href="animal.html">Animal Welfare</a>
+<a href="orphan.html">Orphan Welfare</a>
+<a href="nature.html">Nature Welfare</a>
+</div>
 
 <header>
 <h1>🙏 Temple Construction Donation 🙏</h1>
@@ -182,7 +185,6 @@ body {
 </header>
 
 <section>
-   
 
 <div class="card">
 <h2>Our Mission</h2>
@@ -197,7 +199,7 @@ Your donation helps complete construction and serve the community.
 
 <p>Every contribution matters 🙏</p>
 
-<img src="qr.png" width="220" alt="Donation QR">
+<img src="qr.png" alt="Donation QR">
 
 <p><strong>UPI:</strong> temple@upi</p>
 <p><strong>Bank:</strong> Temple Trust Account</p>
