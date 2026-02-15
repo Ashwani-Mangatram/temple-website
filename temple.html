@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Temple</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temple</title>
 
 <style>
 body {
     margin: 0;
-    min-height: 100vh;
-    overflow: hidden;
     font-family: Arial, sans-serif;
     color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* background */
@@ -23,7 +23,6 @@ body {
     z-index: -2;
 }
 
-/* overlay */
 .overlay {
     position: fixed;
     inset: 0;
@@ -31,102 +30,64 @@ body {
     z-index: -1;
 }
 
-/* zoom animation */
 @keyframes slowZoom {
     from { transform: scale(1); }
     to { transform: scale(1.08); }
 }
 
-/* Om watermark */
-.om {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 160px;
-    opacity: 0.08;
-}
-
-/* quote */
-.quote {
-    position: fixed;
-    bottom: 110px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 22px;
+/* center content */
+.center {
+    position: relative;
+    z-index: 2;
+    padding: 40px 20px 160px;
     text-align: center;
+}
+
+/* sloka */
+.sloka {
+    font-size: 22px;
     font-weight: bold;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    margin-bottom: 10px;
 }
 
-/* corner text */
-.corner-text {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+.translation {
     font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 30px;
 }
 
-/* mantra button */
-#soundBtn {
+/* buttons container */
+.controls {
     position: fixed;
     bottom: 20px;
-    left: 20px;
-    padding: 12px 18px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    background: gold;
-    cursor: pointer;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 20px;
 }
 
-/* bell button */
-#bellBtn {
-    position: fixed;
-    bottom: 80px;
-    left: 20px;
-    padding: 12px 18px;
+/* buttons */
+button {
+    width: 100%;
+    padding: 16px;
     font-size: 16px;
     border: none;
-    border-radius: 8px;
-    background: orange;
+    border-radius: 12px;
     cursor: pointer;
+    font-weight: bold;
 }
 
-/* ---------- PREMIUM MOBILE FIX ---------- */
+.bell { background: orange; }
+.mantra { background: gold; }
+
+/* MOBILE */
 @media (max-width: 768px) {
 
-body {
-    overflow: auto;
-    padding: 20px;
-}
-
-/* center text */
-.quote {
-    width: 90%;
-    font-size: 16px;
-    bottom: 120px;
-}
-
-/* smaller Om */
-.om {
-    font-size: 80px;
-}
-
-/* stack buttons */
-#soundBtn,
-#bellBtn {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 85%;
-}
-
-#bellBtn { bottom: 90px; }
-#soundBtn { bottom: 20px; }
-
-.corner-text {
-    font-size: 11px;
-}
+.sloka { font-size: 18px; }
+.translation { font-size: 13px; }
 
 }
 
@@ -138,54 +99,43 @@ body {
 <div class="bg"></div>
 <div class="overlay"></div>
 
-<div class="om">ॐ</div>
+<div class="center">
 
-<div class="quote">
+<div class="sloka">
 “धर्मो रक्षति रक्षितः”
-<br>
-(Dharma protects those who protect it)
 </div>
 
-<div class="corner-text">
-Sanatan Dharma • Eternal Truth
+<div class="translation">
+Dharma protects those who protect it
 </div>
 
-<button id="soundBtn">🕉 Play Gayatri Mantra</button>
-<audio id="mantraSound" loop>
-  <source src="gayatri.mp3" type="audio/mpeg">
-</audio>
+</div>
 
-<button id="bellBtn">🔔 Play Bell</button>
-<audio id="bellSound" loop>
-  <source src="bell.mp3" type="audio/mpeg">
-</audio>
+<div class="controls">
+<button class="bell" id="bellBtn">🔔 Play Bell</button>
+<button class="mantra" id="mantraBtn">🕉 Play Gayatri Mantra</button>
+</div>
+
+<audio id="bell" src="bell.mp3"></audio>
+<audio id="mantra" src="gayatri.mp3" loop></audio>
 
 <script>
-const mantraBtn = document.getElementById("soundBtn");
-const mantra = document.getElementById("mantraSound");
-
 const bellBtn = document.getElementById("bellBtn");
-const bell = document.getElementById("bellSound");
+const mantraBtn = document.getElementById("mantraBtn");
+
+const bell = document.getElementById("bell");
+const mantra = document.getElementById("mantra");
+
+bellBtn.onclick = () => bell.play();
 
 mantraBtn.onclick = () => {
     if (mantra.paused) {
         mantra.play();
-        mantraBtn.innerText = "🔇 Stop Mantra";
+        mantraBtn.innerText = "🔕 Stop Mantra";
     } else {
         mantra.pause();
         mantra.currentTime = 0;
         mantraBtn.innerText = "🕉 Play Gayatri Mantra";
-    }
-};
-
-bellBtn.onclick = () => {
-    if (bell.paused) {
-        bell.play();
-        bellBtn.innerText = "🔕 Stop Bell";
-    } else {
-        bell.pause();
-        bell.currentTime = 0;
-        bellBtn.innerText = "🔔 Play Bell";
     }
 };
 </script>
