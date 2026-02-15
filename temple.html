@@ -100,17 +100,28 @@ body {
 Sanatan Dharma • Eternal Truth
 </div>
 
-<button id="soundBtn">🔔 Play Mantra</button>
+<button id="soundBtn">🔔 Play Bell</button>
 
 <audio id="bellSound" loop>
   <source src="bell.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-document.getElementById("soundBtn").onclick = function() {
-    document.getElementById("bellSound").play();
-};
+const btn = document.getElementById("soundBtn");
+const bell = document.getElementById("bellSound");
+
+btn.addEventListener("click", () => {
+    if (bell.paused) {
+        bell.play();
+        btn.innerText = "🔕 Stop Bell";
+    } else {
+        bell.pause();
+        bell.currentTime = 0;
+        btn.innerText = "🔔 Play Bell";
+    }
+});
 </script>
+
 
 </body>
 </html>
