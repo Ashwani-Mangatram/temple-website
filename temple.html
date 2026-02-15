@@ -22,7 +22,7 @@ body {
     z-index: -2;
 }
 
-/* dark overlay for readability */
+/* dark overlay */
 .overlay {
     position: fixed;
     inset: 0;
@@ -34,15 +34,6 @@ body {
 @keyframes slowZoom {
     from { transform: scale(1); }
     to { transform: scale(1.08); }
-}
-
-/* small corner text */
-.corner-text {
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    font-size: 14px;
-    opacity: 0.8;
 }
 
 /* Om watermark */
@@ -58,12 +49,36 @@ body {
 /* Sanskrit quote */
 .quote {
     position: fixed;
-    bottom: 60px;
+    bottom: 90px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 20px;
+    font-size: 22px;
     text-align: center;
-    opacity: 0.9;
+    font-weight: bold;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+/* corner text */
+.corner-text {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* bell button */
+#soundBtn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 12px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: gold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 </style>
 </head>
@@ -73,26 +88,29 @@ body {
 <div class="bg"></div>
 <div class="overlay"></div>
 
-<!-- Om watermark -->
 <div class="om">ॐ</div>
 
-<!-- Sanskrit quote -->
 <div class="quote">
-“धर्मो रक्षति रक्षितः”  
+“धर्मो रक्षति रक्षितः”
 <br>
 (Dharma protects those who protect it)
 </div>
 
-<!-- corner text -->
 <div class="corner-text">
 Sanatan Dharma • Eternal Truth
 </div>
 
-<!-- temple bell sound -->
-<audio autoplay loop>
+<button id="soundBtn">🔔 Play Temple Bell</button>
+
+<audio id="bellSound" loop>
   <source src="bell.mp3" type="audio/mpeg">
 </audio>
 
+<script>
+document.getElementById("soundBtn").onclick = function() {
+    document.getElementById("bellSound").play();
+};
+</script>
+
 </body>
 </html>
-
