@@ -80,7 +80,9 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
-    #bellBtn {
+
+/* bell button */
+#bellBtn {
     position: fixed;
     bottom: 70px;
     left: 20px;
@@ -92,7 +94,6 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
-
 </style>
 </head>
 
@@ -113,10 +114,16 @@ body {
 Sanatan Dharma • Eternal Truth
 </div>
 
+<!-- Gayatri mantra -->
 <button id="soundBtn">🕉 Play Gayatri Mantra</button>
-
 <audio id="mantraSound" loop>
   <source src="gayatri.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Temple bell -->
+<button id="bellBtn">🔔 Play Bell</button>
+<audio id="bellSound" loop>
+  <source src="bell.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -148,7 +155,6 @@ bellBtn.onclick = () => {
     }
 };
 </script>
-
 
 </body>
 </html>
