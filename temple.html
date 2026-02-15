@@ -35,26 +35,38 @@ body {
     to { transform: scale(1.08); }
 }
 
-/* center content */
+/* main center sloka */
 .center {
     position: relative;
     z-index: 2;
-    padding: 40px 20px 160px;
+    padding: 40px 20px;
     text-align: center;
 }
 
-/* sloka */
 .sloka {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: bold;
     text-shadow: 0 2px 8px rgba(0,0,0,0.8);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .translation {
-    font-size: 14px;
-    opacity: 0.9;
+    font-size: 16px;
+    opacity: 0.95;
     margin-bottom: 30px;
+}
+
+/* right side sloka */
+.side-sloka {
+    position: fixed;
+    right: 40px;
+    top: 35%;
+    max-width: 260px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: right;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+    z-index: 2;
 }
 
 /* buttons container */
@@ -65,32 +77,44 @@ body {
     right: 0;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
     padding: 0 20px;
 }
 
-/* buttons */
 button {
-    width: 55%;
+    width: 45%;
     margin: 0 auto;
-    padding: 5px 8px;
-    font-size: 11px;
+    padding: 6px 8px;
+    font-size: 12px;
     border: none;
-    border-radius: 7px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
-    display: block;
 }
-
 
 .bell { background: orange; }
 .mantra { background: gold; }
 
-/* MOBILE */
+/* ---------- MOBILE ---------- */
 @media (max-width: 768px) {
 
-.sloka { font-size: 18px; }
-.translation { font-size: 13px; }
+.sloka { font-size: 20px; }
+.translation { font-size: 14px; }
+
+.side-sloka {
+    position: relative;
+    top: auto;
+    right: auto;
+    text-align: center;
+    margin: 20px auto;
+    font-size: 16px;
+    max-width: 90%;
+}
+
+button {
+    width: 70%;
+    font-size: 12px;
+}
 
 }
 
@@ -114,9 +138,16 @@ Dharma protects those who protect it
 
 </div>
 
+<!-- right side sloka -->
+<div class="side-sloka">
+“यतो धर्मस्ततो जयः”
+<br>
+(Where there is Dharma, there is victory)
+</div>
+
 <div class="controls">
-<button class="bell" id="bellBtn">🔔 Play 🕉 </button>
-<button class="mantra" id="mantraBtn">Play Gayatri Mantra</button>
+<button class="bell" id="bellBtn">🔔 Play Bell</button>
+<button class="mantra" id="mantraBtn">🕉 Play Gayatri Mantra</button>
 </div>
 
 <audio id="bell" src="bell.mp3"></audio>
@@ -147,7 +178,7 @@ mantraBtn.onclick = () => {
     } else {
         mantra.pause();
         mantra.currentTime = 0;
-        mantraBtn.innerText = "Play Gayatri Mantra";
+        mantraBtn.innerText = "🕉 Play Gayatri Mantra";
     }
 };
 </script>
