@@ -2,6 +2,25 @@
 <html>
 <head>
 <title>Animal Welfare</title>
+  <style>
+body {
+    margin: 0;
+    font-family: Arial;
+    text-align: center;
+    padding: 50px;
+    background: url('animal.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.35);
+    z-index: -1;
+}
+</style>
+
 </head>
 
 <body style="font-family:Arial; text-align:center; padding:50px; background:#f5f5f5;">
